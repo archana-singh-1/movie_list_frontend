@@ -44,3 +44,15 @@
   font-weight: 600;
 
 }
+
+@media(max-width:576px){
+  .container{
+    display: inline-block;
+    width: auto;
+  }
+  .inputBtn{
+    margin-left: 0;
+    width: 422px;
+  }
+
+}

@@ -8,7 +8,7 @@ function App() {
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/movieList", {
+    fetch("https://movie-list-backend-three.vercel.app/api/movieList", {
       method: "GET",
       mode: "cors",
     })

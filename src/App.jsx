@@ -8,11 +8,22 @@ function App() {
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/movieList")
-      .then((resp) => resp.json())
+    fetch("http://localhost:4000/api/movieList", {
+      method: "GET",
+      mode: "cors",
+    })
+      .then((resp) => {
+        if (!resp.ok) {
+          throw new Error(`HTTP error! Status: ${resp.status}`);
+        }
+        return resp.json();
+      })
       .then((data) => {
         setFetchData(data);
         setFilteredMovies(data);
+      })
+      .catch((error) => {
+        console.error("Fetch Error:", error);
       });
   }, []);
 
